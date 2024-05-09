@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+<link rel="stylesheet" href="/public/main.css" />
+
+<div class="commentary-container">
+        <div class="commentary-row1">
+                <form class="comment-form" action="/submit" method="POST">
+                        <label for="comment">Penny for your thoughts?</label>
+                        <input type="text" id="my-comment" name="commentary" required>
+                        <input type="submit" value="submit">
+                </form>
+        </div>
+
+        <div class="commentary-row2">
+                <% if (locals.comment) { %>
+                        <p><%= comment %></p>
+                        <% } else { %>
+                        <h7></h7>
+                        <% } %>
+        </div>
+</div>
+
+
+
+<%- include('partials/footer.ejs') %>
